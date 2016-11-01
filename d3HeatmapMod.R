@@ -52,7 +52,7 @@ d3HeatmapControl <- function(id) {
 
 d3HeatmapPlot <- function(id) {
   ns <- NS(id)
-  d3Heatmap::d3HeatmapOutput(ns('heatmap'), width = 1000, height = 1000)
+  d3heatmap::d3heatmapOutput(ns('heatmap'), width = 1000, height = 1000)
 }
 
 d3HeatmapUI <- function(id) {
@@ -78,7 +78,7 @@ d3HeatmapMod <- function(input, output, session, data,
   })
 
   heatmap_obj <- reactive({
-    d3Heatmap::d3Heatmap(d3Heatmap_plotdata(),
+    d3heatmap::d3heatmap(d3Heatmap_plotdata(),
                          dendrogram = input$dendrogram, scale = input$scale,
                          # colors = rev(RColorBrewer::brewer.pal(9, 'RdYlBu')),
                          colors = 'Blues',
@@ -141,7 +141,7 @@ d3HeatmapMod <- function(input, output, session, data,
   })
 
 
-  output$heatmap <- d3Heatmap::renderd3Heatmap({
+  output$heatmap <- d3heatmap::renderD3heatmap({
     heatmap_obj()
   })
 

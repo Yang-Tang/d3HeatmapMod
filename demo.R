@@ -1,6 +1,9 @@
+# A demo shiny app for d3HeatmapMod
+# run with shiny::runApp('demo.R')
+
 library(shiny)
 
-source('modules/d3HeatmapMod.R')
+source('d3HeatmapMod.R')
 
 server <- function(input, output) {
 
